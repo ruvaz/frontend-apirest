@@ -1,0 +1,36 @@
+<div class="row animated fadein ">
+  <div class="col-6">
+    <div class="card">
+      <div class="card-body">
+      <span class="m-l-15">
+           <div>
+            <button *ngIf="page>1" class="btn btn-secondary" (click)="changePage(-1)">Back</button>&nbsp;
+            <button class="btn btn-secondary" (click)="changePage(+1)">Next</button>
+          </div>
+      </span>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="row">
+  <!-- Column -->
+  <div class="col-lg-4" *ngFor="let article of articles">
+    <div class="card">
+      <img class="card-img-top img-fluid"
+           [src]="article.urlToImage"
+           alt="Card image cap">
+      <div class="card-body">
+        <div class="d-flex no-block align-items-center mb-3">
+          <span><i class="ti-calendar"></i> {{article.publishedAt|date}}</span>
+        </div>
+        <h4 class="font-normal">{{article.title}}s</h4>
+        <p class="mb-0 mt-2">{{article.content}}</p>
+        <a [href]="article.url" target="_blank" class="btn btn-success btn-rounded waves-effect waves-light mt-3">Read
+          more</a>
+      </div>
+    </div>
+  </div>
+  <!-- Column -->
+</div>

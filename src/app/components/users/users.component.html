@@ -1,0 +1,45 @@
+<div
+     class="row animated fadein">
+  <div class="col-12">
+    <div class="card">
+      <div class="card-body">
+        <h4 class="card-title">Total users in DB ({{totalUsers}})</h4>
+        <h6 class="card-subtitle">Users</h6>
+        <div class="table-responsive">
+          <table class="table table-bordered">
+            <thead>
+            <tr>
+
+              <th>Name</th>
+              <th>Email</th>
+              <th class="w140">Role</th>
+              <th class="text-nowrap w100">Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let user of users">
+
+              <td> {{user.name}}</td>
+              <td> {{user.email}}</td>
+              <td>
+                <select [(ngModel)]="user.role"
+                        class="form-control">
+                  <option value="ADMIN_ROLE">Admin</option>
+                  <option value="USER_ROLE">User</option>
+                </select>
+              </td>
+
+              <td class="text-nowrap text-center">
+                <a  class="cursor" data-toggle="tooltip" data-original-title="Delete">
+                  <i class="fa fa-close text-danger"></i> </a>
+              </td>
+            </tr>
+
+            </tbody>
+          </table>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
